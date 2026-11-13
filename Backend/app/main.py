@@ -50,7 +50,7 @@ MAX_IMAGE_BYTES = 5 * 1024 * 1024  # 5 MiB
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://parador-becal-web.onrender.com/"
+        "https://parador-becal-web.onrender.com"
     ],
     allow_credentials=False,
     allow_methods=["*"],
