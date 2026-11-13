@@ -8,8 +8,6 @@ class ApiConfig {
     if (_override.trim().isNotEmpty) {
       return _override.trim().replaceAll(RegExp(r'/+$'), '');
     }
-    
-    // 👇 Esta es la URL pública de tu backend en Render 👇
     return 'https://parador-becal.onrender.com';
   }
 }
