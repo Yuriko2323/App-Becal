@@ -49,8 +49,10 @@ MAX_IMAGE_BYTES = 5 * 1024 * 1024  # 5 MiB
 # Ajusta estos orígenes a tus dominios reales en producción.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=[
+        "https://TU-FRONTEND.onrender.com"
+    ],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
