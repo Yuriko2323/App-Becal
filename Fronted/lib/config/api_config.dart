@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
-/// URL central de FastAPI conectada a Render
+/// URL central de FastAPI. Sobrescribir con --dart-define=API_BASE_URL=...
 class ApiConfig {
   static const String _override = String.fromEnvironment('API_BASE_URL');
 
@@ -8,11 +8,10 @@ class ApiConfig {
     if (_override.trim().isNotEmpty) {
       return _override.trim().replaceAll(RegExp(r'/+$'), '');
     }
-<<<<<<< Updated upstream
-=======
-    
-    // 👇 Esta es la URL pública de tu backend en Render 👇
->>>>>>> Stashed changes
-    return 'https://parador-becal.onrender.com';
+    if (kIsWeb) return 'https://parador-becal.onrender.com';
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      return 'https://parador-becal.onrender.com'; // Emulador Android Studio
+    }
+    return 'https://parador-becal.onrender.com'; // Escritorio/iOS Simulator
   }
 }
